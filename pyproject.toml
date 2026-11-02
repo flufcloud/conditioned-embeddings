@@ -1,0 +1,25 @@
+[project]
+name = "conditioned-embeddings"
+version = "0.1.0"
+description = "Train text embeddings to represent emotion while suppressing topic"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-genai>=1.0",
+    "numpy>=2.0",
+    "pydantic>=2.10",
+    "sentence-transformers>=5.0",
+    "torch>=2.7",
+    "transformers>=5.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3"]
+
+[project.scripts]
+emotion-embedding = "conditioned_embeddings.cli:main"
+lm-playground = "conditioned_embeddings.lm_gui:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
